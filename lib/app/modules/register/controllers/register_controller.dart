@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import '../../../routes/app_pages.dart';
 import 'package:get/get.dart';
 import 'package:http/http.dart' as myhttp;
+import '../../../../const/koneksi.dart';
 
 class RegisterController extends GetxController {
   TextEditingController namaC = TextEditingController();
@@ -24,7 +25,7 @@ class RegisterController extends GetxController {
       );
     } else {
       var myResponse = await myhttp.post(
-        Uri.parse("http://192.168.1.9:8080/alula/api/user/add"),
+        Uri.parse("${server1}/alula/api/user/add"),
         body: {
           "nama_lengkap": namaC.text,
           "email": emailC.text,
